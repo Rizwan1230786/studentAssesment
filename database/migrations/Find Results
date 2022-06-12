@@ -1,0 +1,158 @@
+Searching 11902 files for "date('d-m-y)"
+
+0 matches
+
+Searching 11902 files for "date('d-M-Y)"
+
+0 matches
+
+Searching 11902 files for "d-M-Y"
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/app/Http/Controllers/SmFeesController.php:
+  382          $student = SmStudent::find($fees_assigned->student_id);
+  383          $pdf = PDF::loadView('backEnd.feesCollection.fees_group_print', ['fees_assigned' => $fees_assigned, 'student' => $student]);
+  384:         return $pdf->stream(date('d-m-Y').'-'.$student->full_name.'-fees-group-details.pdf');
+  385      }
+  386  
+  ...
+  389          $group = $group;
+  390          $pdf = PDF::loadView('backEnd.feesCollection.fees_payment_print', ['payment' => $payment, 'group' => $group]);
+  391:         return $pdf->stream(date('d-m-Y').'-'.$student->full_name.'-fees-payment-details.pdf');
+  392      }
+  393      public function feesGroupsPrint($id, $s_id){
+  ...
+  398          }
+  399          $pdf = PDF::loadView('backEnd.feesCollection.fees_groups_print', ['fees_assigneds' => $fees_assigneds, 'student' => $student]);
+  400:         return $pdf->stream(date('d-m-Y').'-'.$student->full_name.'-fees-groups-details.pdf');
+  401      }
+  402  
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/public/backEnd/vendors/js/jquery-ui.js:
+ 8455  	ISO_8601: "yy-mm-dd",
+ 8456  	RFC_822: "D, d M y",
+ 8457: 	RFC_850: "DD, dd-M-y",
+ 8458  	RFC_1036: "D, d M y",
+ 8459  	RFC_1123: "D, d M yy",
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/resources/views/backEnd/communicate/emailSmsLog.blade.php:
+   68                              <td>{{$value->title}}</td>
+   69                              <td>{{$value->description}}</td>
+   70:                             <td>{{date('jS M, Y', strtotime($value->send_date))}}</td>
+   71                              <td>@if($value->send_through == 'E')
+   72                              <button class="primary-btn small bg-warning text-white border-0">Email</button>
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/resources/views/backEnd/dashboard.blade.php:
+  308                                  <label for="midterm1">
+  309                                      <h5 class="d-inline">{{$toDoList->todo_title}}</h5>
+  310:                                     <p class="ml-35">{{ date('jS M, Y', strtotime($toDoList->date)) }}</p>
+  311                                  </label>
+  312                              </div>
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/resources/views/backEnd/dashboard/viewToDo.blade.php:
+   39                      <div class="col-lg-4 col-md-4">
+   40                          <div class="name">
+   41:                             @if(isset($toDolists)){{date('jS M, Y', strtotime($toDolists->date))}} @endif
+   42                          </div>
+   43                      </div>
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/resources/views/backEnd/events/eventsList.blade.php:
+  215  
+  216                              <td>{{$value->event_title}}</td>
+  217:                             <td>{{date('jS M, Y', strtotime($value->from_date))}}</td>
+  218:                             <td>{{date('jS M, Y', strtotime($value->to_date))}}</td>
+  219                              <td>{{$value->event_des}}</td>
+  220  
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/resources/views/backEnd/humanResource/addStaffTimeline.blade.php:
+   19                  <div class="input-effect">
+   20                      <input class="primary-input date form-control{{ $errors->has('date_of_birth') ? ' is-invalid' : '' }}" id="startDate" type="text"
+   21:                     name="date" autocomplete="off" value="{{date('d-m-Y')}}">
+   22                      <span class="focus-border"></span>
+   23                      <label>Date <span>*</span> </label>
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/storage/framework/views/8ecf5a93cdc3dd521739104eebcb0adf3c55d440.php:
+  312                                  <label for="midterm1">
+  313                                      <h5 class="d-inline"><?php echo e($toDoList->todo_title); ?></h5>
+  314:                                     <p class="ml-35"><?php echo e(date('jS M, Y', strtotime($toDoList->date))); ?></p>
+  315                                  </label>
+  316                              </div>
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/paypal/rest-api-sdk-php/lib/PayPal/Log/PayPalLogger.php:
+   78              // Checks if the message is at level below configured logging level
+   79              if (array_search($level, $this->loggingLevels) <= array_search($this->loggingLevel, $this->loggingLevels)) {
+   80:                 error_log("[" . date('d-m-Y H:i:s') . "] " . $this->loggerName . " : " . strtoupper($level) . ": $message\n", 3, $this->loggerFile);
+   81              }
+   82          }
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/phpoffice/phpexcel/Classes/PHPExcel/Style/NumberFormat.php:
+   45      const FORMAT_DATE_DDMMYYYY           = 'dd/mm/yy';
+   46      const FORMAT_DATE_DMYSLASH           = 'd/m/y';
+   47:     const FORMAT_DATE_DMYMINUS           = 'd-m-y';
+   48      const FORMAT_DATE_DMMINUS            = 'd-m';
+   49      const FORMAT_DATE_MYMINUS            = 'm-y';
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/phpoffice/phpexcel/Examples/31docproperties_write-xls.php:
+   84  echo 'Core Properties:' , EOL;
+   85  echo '    Created by - ' , $objPHPExcel->getProperties()->getCreator() , EOL;
+   86: echo '    Created on - ' , date('d-M-Y',$objPHPExcel->getProperties()->getCreated()) , ' at ' ,
+   87                         date('H:i:s',$objPHPExcel->getProperties()->getCreated()) , EOL;
+   88  echo '    Last Modified by - ' , $objPHPExcel->getProperties()->getLastModifiedBy() , EOL;
+   89: echo '    Last Modified on - ' , date('d-M-Y',$objPHPExcel->getProperties()->getModified()) , ' at ' ,
+   90                               date('H:i:s',$objPHPExcel->getProperties()->getModified()) , EOL;
+   91  echo '    Title - ' , $objPHPExcel->getProperties()->getTitle() , EOL;
+   ..
+  108  	echo '    ' , $customProperty , ' - (' , $propertyType , ') - ';
+  109  	if ($propertyType == PHPExcel_DocumentProperties::PROPERTY_TYPE_DATE) {
+  110: 		echo date('d-M-Y H:i:s',$propertyValue) , EOL;
+  111  	} elseif ($propertyType == PHPExcel_DocumentProperties::PROPERTY_TYPE_BOOLEAN) {
+  112  		echo (($propertyValue) ? 'TRUE' : 'FALSE') , EOL;
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/phpoffice/phpexcel/Examples/31docproperties_write.php:
+   84  echo 'Core Properties:' , EOL;
+   85  echo '    Created by - ' , $objPHPExcel->getProperties()->getCreator() , EOL;
+   86: echo '    Created on - ' , date('d-M-Y',$objPHPExcel->getProperties()->getCreated()) , ' at ' ,
+   87                         date('H:i:s',$objPHPExcel->getProperties()->getCreated()) , EOL;
+   88  echo '    Last Modified by - ' , $objPHPExcel->getProperties()->getLastModifiedBy() , EOL;
+   89: echo '    Last Modified on - ' , date('d-M-Y',$objPHPExcel->getProperties()->getModified()) , ' at ' ,
+   90                               date('H:i:s',$objPHPExcel->getProperties()->getModified()) , EOL;
+   91  echo '    Title - ' , $objPHPExcel->getProperties()->getTitle() , EOL;
+   ..
+  108  	echo '    ' , $customProperty , ' - (' , $propertyType , ') - ';
+  109  	if ($propertyType == PHPExcel_DocumentProperties::PROPERTY_TYPE_DATE) {
+  110: 		echo date('d-M-Y H:i:s',$propertyValue) , EOL;
+  111  	} elseif ($propertyType == PHPExcel_DocumentProperties::PROPERTY_TYPE_BOOLEAN) {
+  112  		echo (($propertyValue) ? 'TRUE' : 'FALSE') , EOL;
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/symfony/http-foundation/Cookie.php:
+  144  
+  145          if ('' === (string) $this->getValue()) {
+  146:             $str .= 'deleted; expires='.gmdate('D, d-M-Y H:i:s T', time() - 31536001).'; Max-Age=0';
+  147          } else {
+  148              $str .= $this->isRaw() ? $this->getValue() : rawurlencode($this->getValue());
+  149  
+  150              if (0 !== $this->getExpiresTime()) {
+  151:                 $str .= '; expires='.gmdate('D, d-M-Y H:i:s T', $this->getExpiresTime()).'; Max-Age='.$this->getMaxAge();
+  152              }
+  153          }
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/symfony/http-foundation/Tests/CookieTest.php:
+  178  
+  179          $cookie = Cookie::create('foo', null, 1, '/admin/', '.myfoodomain.com', false, true, false, null);
+  180:         $this->assertEquals('foo=deleted; expires='.gmdate('D, d-M-Y H:i:s T', $expire = time() - 31536001).'; Max-Age=0; path=/admin/; domain=.myfoodomain.com; httponly', (string) $cookie, '->__toString() returns string representation of a cleared cookie if value is NULL');
+  181  
+  182          $cookie = Cookie::create('foo', 'bar');
+
+/Applications/MAMP/htdocs/laravel/schoolmanagementsystem/vendor/symfony/http-foundation/Tests/ResponseHeaderBagTest.php:
+  117          $bag->clearCookie('foo');
+  118  
+  119:         $this->assertSetCookieHeader('foo=deleted; expires='.gmdate('D, d-M-Y H:i:s T', time() - 31536001).'; Max-Age=0; path=/; httponly', $bag);
+  120      }
+  121  
+  ...
+  126          $bag->clearCookie('foo', '/', null, true, false);
+  127  
+  128:         $this->assertSetCookieHeader('foo=deleted; expires='.gmdate('D, d-M-Y H:i:s T', time() - 31536001).'; Max-Age=0; path=/; secure', $bag);
+  129      }
+  130  
+
+24 matches across 15 files

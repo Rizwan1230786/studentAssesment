@@ -1,0 +1,164 @@
+@php 
+    $setting = App\SmGeneralSettings::find(1);
+    if(isset($setting->copyright_text)){ $copyright_text = $setting->copyright_text; }else{ $copyright_text = 'Copyright 2019 All rights reserved by Codethemes'; }
+
+@endphp
+</div>
+</div>
+
+<div class="has-modal modal fade" id="showDetaildModal">
+    <div class="modal-dialog modal-dialog-centered" id="modalSize">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" id="showDetaildModalTile">New Client Information</h4>
+                <button type="button" class="close icons" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" id="showDetaildModalBody">
+
+            </div>
+
+            <!-- Modal footer -->
+
+        </div>
+    </div>
+</div>
+
+
+<!--  Start Modal Area -->
+<div class="modal fade invoice-details" id="showDetaildModalInvoice">
+    <div class="modal-dialog large-modal modal-dialog-centered" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Invoice</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body" id="showDetaildModalBodyInvoice">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End                         Modal Area -->
+<!-- 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-19dbe886-4add-4bfa-b06d-0bcd8a02d5aa"></div>
+
+<div class="skype-button bubble" data-bot-id="spondonit"></div>
+<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script> -->
+
+<!-- ================Footer Area ================= -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 text-center">
+                <p>{!! $copyright_text !!} </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ================End Footer Area ================= -->
+
+<script src="{{asset('public/backEnd/')}}/vendors/js/jquery-3.2.1.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/jquery-ui.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/jquery.data-tables.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/dataTables.buttons.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/buttons.flash.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/jszip.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/buttons.html5.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/buttons.print.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/dataTables.rowReorder.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/dataTables.responsive.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/buttons.colVis.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/popper.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/nice-select.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/jquery.magnific-popup.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/fastselect.standalone.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/raphael-min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/morris.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/ckeditor.js"></script>
+<script type="text/javascript" src="{{asset('public/backEnd/')}}/vendors/js/toastr.min.js"></script>
+
+<script type="text/javascript" src="{{asset('public/backEnd/')}}/vendors/js/moment.min.js"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
+</script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap-datepicker.min.js">
+</script>
+
+
+<script type="text/javascript" src="{{asset('public/backEnd/')}}/vendors/js/fullcalendar.min.js"></script>
+
+
+<script type="text/javascript" src="{{asset('public/backEnd/')}}/js/jquery.validate.min.js"></script>
+<script src="{{asset('public/backEnd/')}}/vendors/js/select2/select2.min.js"></script>
+
+<script src="{{asset('public/backEnd/')}}/js/main.js"></script>
+<script src="{{asset('public/backEnd/')}}/js/custom.js"></script>
+<script src="{{asset('public/backEnd/')}}/js/developer.js"></script>
+
+
+<script type="text/javascript">
+
+    // for select2 multiple dropdown in send email/Sms in Individual Tab
+    $("#selectStaffss").select2();
+    $("#checkbox").click(function () {
+        if ($("#checkbox").is(':checked')) {
+            $("#selectStaffss > option").prop("selected", "selected");
+            $("#selectStaffss").trigger("change");
+        } else {
+            $("#selectStaffss > option").removeAttr("selected");
+            $("#selectStaffss").trigger("change");
+        }
+    });
+
+
+    // for select2 multiple dropdown in send email/Sms in Class tab
+    $("#selectSectionss").select2();
+    $("#checkbox_section").click(function () {
+        if ($("#checkbox_section").is(':checked')) {
+            $("#selectSectionss > option").prop("selected", "selected");
+            $("#selectSectionss").trigger("change");
+        } else {
+            $("#selectSectionss > option").removeAttr("selected");
+            $("#selectSectionss").trigger("change");
+        }
+    });
+
+</script>
+ 
+
+
+
+@yield('script')
+
+</body>
+</html>
+

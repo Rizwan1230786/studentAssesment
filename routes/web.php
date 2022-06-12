@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 Route::get('/', 'SmFrontendController@index');
 Route::get('home', 'SmFrontendController@index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
